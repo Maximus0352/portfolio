@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Développeur Full Stack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav">
+    <div class="conteneur">
+      <!-- À MODIFIER : votre nom -->
+      <a class="logo" href="#accueil"><span>&lt;/&gt;</span>RAZAFINIRINA Maximin Ferdino</a>
+
+      <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <nav class="menu" id="menu">
+        <a href="#accueil">Accueil</a>
+        <a href="#a-propos">À propos</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#parcours">Parcours</a>
+        <a href="#contact">Contact</a>
+        <!-- À MODIFIER : mettez ici le fichier PDF de votre CV (ex. cv.pdf) -->
+        <a class="bouton" href="CV_Maximin.pdf" target="_blank">Télécharger mon CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ ACCUEIL ============ -->
+    <section class="conteneur hero" id="accueil">
+      <div>
+        <p class="sur-titre">L3 INFORMATIQUE / GÉNIE LOGICIEL</p>
+        <h1>Je transforme des idées en <em>applications</em> fonctionnelles.</h1>
+        <p class="hero-texte">Développeur Full Stack junior, je conçois et développe des applications web en explorant le frontend, le backend et les bases de données. J'apprends en construisant des projets concrets et en approfondissant mes compétences en ingénierie logicielle.</p>
+        <div class="hero-boutons">
+          <a class="bouton bouton-principal" href="#projets">Voir mes projets</a>
+          <a class="bouton" href="#contact">Me contacter</a>
+        </div>
+        <p class="hero-stack">JavaScript · React · Node.js · Java · Spring Boot</p>
+      </div>
+
+      <div>
+        <div class="photo">
+          <div class="photo-barre"><span>developer.profile</span><span>images/photo.jpg</span></div>
+
+          <!-- À MODIFIER : pour mettre votre photo, supprimez le bloc
+               "photo-vide" ci-dessous et écrivez à la place :
+               <img src="images/photo.jpg" alt="Votre nom"> -->
+          <div class="photo-vide">
+            <strong>Photo placeholder</strong>
+            <span>Remplacez par votre photo professionnelle</span>
+          </div>
+        </div>
+
+        <div class="code" aria-hidden="true">
+          <div class="code-titre">profile.js</div>
+<pre>const dev = {
+  role: <span class="texte">"Full Stack junior"</span>,
+  formation: <span class="texte">"L3 Génie Logiciel"</span>,
+  interets: [<span class="texte">"architecture"</span>, <span class="texte">"UI/UX"</span>, <span class="texte">"BDD"</span>],
+  stack: [<span class="texte">"React"</span>, <span class="texte">"Node.js"</span>, <span class="texte">"Spring Boot"</span>],
+  cherche: <span class="texte">"stage"</span>,
+};</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ À PROPOS ============ -->
+    <section class="section" id="a-propos">
+      <div class="conteneur">
+        <h2 class="section-titre"><span>//</span>À propos</h2>
+        <p class="question">Qui se trouve derrière le code ?</p>
+
+        <div class="apropos">
+          <p class="apropos-texte">Actuellement étudiant en L3 Informatique, spécialité Génie Logiciel, je développe mes compétences en programmation, conception d'applications et gestion des bases de données. Mes projets académiques et personnels me permettent de mettre en pratique mes connaissances et de progresser dans le développement de solutions logicielles.</p>
+
+          <div class="infos">
+            <div class="infos-titre">about.config</div>
+            <dl>
+              <div><dt>formation</dt><dd>L3 Informatique</dd></div>
+              <div><dt>specialite</dt><dd>Génie logiciel</dd></div>
+              <div><dt>domaine</dt><dd>Full Stack Development</dd></div>
+              <div><dt>interets</dt><dd>Architecture logicielle, UI/UX, bases de données</dd></div>
+              <div><dt>objectif</dt><dd>Stage et expérience professionnelle</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPÉTENCES ============ -->
+    <section class="section" id="competences">
+      <div class="conteneur">
+        <h2 class="section-titre"><span>//</span>Tech stack</h2>
+        <p class="section-intro">Les technologies que j'utilise dans mes projets.</p>
+
+        <div class="pile">
+          <div class="pile-groupe">
+            <h3>Frontend</h3>
+            <p class="dossier">frontend/</p>
+            <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li></ul>
+          </div>
+          <div class="pile-groupe">
+            <h3>Backend</h3>
+            <p class="dossier">backend/</p>
+            <ul><li>Node.js</li><li>PHP</li><li>Java</li><li>Spring Boot</li></ul>
+          </div>
+          <div class="pile-groupe">
+            <h3>Bases de données</h3>
+            <p class="dossier">databases/</p>
+            <ul><li>MySQL</li><li>PostgreSQL</li><li>SQLite</li></ul>
+          </div>
+          <div class="pile-groupe">
+            <h3>Outils et environnement</h3>
+            <p class="dossier">tooling/</p>
+            <ul><li>Git</li><li>GitHub</li><li>Docker</li><li>Maven</li><li>Figma</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="projets">
+      <div class="conteneur">
+        <h2 class="section-titre"><span>//</span>Projets sélectionnés</h2>
+        <p class="section-intro">Des projets concrets pour expérimenter, construire et progresser.</p>
+
+        <!-- Projet 1 -->
+        <article class="projet">
+          <div>
+            <div class="projet-entete">
+              <span class="numero">PROJECT_01</span>
+              <span class="statut">En développement</span>
+            </div>
+            <h3>Tantsaha Connect</h3>
+            <p class="projet-texte">Application destinée à accompagner les agriculteurs dans le suivi de leurs cultures, avec des informations météorologiques et des conseils agricoles.</p>
+            <div class="etiquettes">
+              <span class="etiquette">React Native</span><span class="etiquette">Expo</span><span class="etiquette">Node.js</span><span class="etiquette">MySQL</span>
+            </div>
+            <div class="projet-liens">
+              <a class="bouton" href="projet.html#tantsaha-connect">Voir les détails →</a>
+              <a class="lien" href="#">Voir le code</a>
+            </div>
+          </div>
+          <div class="captures">
+            <div class="capture"><strong>Screenshot placeholder</strong>Capture de la version web</div>
+          </div>
+        </article>
+
+        <!-- Projet 2 -->
+        <article class="projet">
+          <div>
+            <div class="projet-entete">
+              <span class="numero">PROJECT_02</span>
+              <span class="statut">En développement</span>
+            </div>
+            <h3>Gestion de tournois sportifs</h3>
+            <p class="projet-texte">Application de gestion de tournois sportifs développée dans le cadre d'un projet personnel en Java et Spring Boot.</p>
+            <div class="etiquettes">
+              <span class="etiquette">Java</span><span class="etiquette">Spring Boot</span><span class="etiquette">Maven</span><span class="etiquette">MySQL</span>
+            </div>
+            <div class="projet-liens">
+              <a class="bouton" href="projet.html#gestion-tournois">Voir les détails →</a>
+              <a class="lien" href="#">Voir le code</a>
+            </div>
+          </div>
+          <div class="captures">
+            <div class="capture"><strong>Screenshot placeholder</strong>Tableau de bord</div>
+            <div class="captures-petites">
+              <div class="capture"><strong>Screenshot placeholder</strong>Équipes</div>
+              <div class="capture"><strong>Screenshot placeholder</strong>Tournois</div>
+              <div class="capture"><strong>Screenshot placeholder</strong>Matchs</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Projet 3 -->
+        <article class="projet">
+          <div>
+            <div class="projet-entete">
+              <span class="numero">PROJECT_03</span>
+              <span class="statut">Projet académique</span>
+            </div>
+            <h3>Pipeline de données e-commerce</h3>
+            <p class="projet-texte">Projet de traitement de données utilisant une architecture en couches Bronze, Silver et Gold.</p>
+            <div class="etiquettes">
+              <span class="etiquette">Python</span><span class="etiquette">PostgreSQL</span><span class="etiquette">SQL</span><span class="etiquette">Docker</span>
+            </div>
+            <div class="projet-liens">
+              <a class="bouton" href="projet.html#pipeline-ecommerce">Voir les détails →</a>
+              <a class="lien" href="#">Voir le code</a>
+            </div>
+          </div>
+          <div class="captures">
+            <div class="capture"><strong>Screenshot placeholder</strong>Résultats SQL ou exécution du pipeline</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="parcours">
+      <div class="conteneur">
+        <h2 class="section-titre"><span>//</span>Parcours</h2>
+        <p class="section-intro">Formation, projets et expériences. Les dates et les établissements sont à renseigner.</p>
+
+        <ul class="parcours">
+          <li class="en-cours">
+            <span class="type">FORMATION</span>
+            <h3>Licence 3 Informatique, spécialité Génie Logiciel</h3>
+            <span class="date">Établissement et dates à renseigner</span>
+            <p>Programmation, conception d'applications et gestion des bases de données.</p>
+          </li>
+          <li>
+            <span class="type">PROJET_PERSO</span>
+            <h3>Gestion de tournois sportifs</h3>
+            <span class="date">Dates à renseigner</span>
+            <p>Java, Spring Boot, Maven, MySQL.</p>
+          </li>
+          <li>
+            <span class="type">PROJET</span>
+            <h3>Tantsaha Connect</h3>
+            <span class="date">Dates à renseigner</span>
+            <p>React Native, Expo, Node.js, MySQL.</p>
+          </li>
+          <li>
+            <span class="type">PROJET</span>
+            <h3>Pipeline de données e-commerce</h3>
+            <span class="date">Dates à renseigner</span>
+            <p>Python, PostgreSQL, SQL, Docker.</p>
+          </li>
+          <li class="reserve">
+            <span class="type">PROJET_ACADEMIQUE</span>
+            <h3>Emplacement réservé</h3>
+            <span class="date">Date à renseigner</span>
+            <p>Ajoutez ici un projet réalisé dans le cadre de votre formation.</p>
+          </li>
+          <li class="reserve">
+            <span class="type">EXPERIENCE_PRO</span>
+            <h3>Emplacement réservé</h3>
+            <span class="date">Date à renseigner</span>
+            <p>Ajoutez ici un stage ou une mission lorsque ce sera le cas.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="conteneur contact">
+        <div>
+          <h2>Construisons quelque chose d'utile.</h2>
+          <p>Je suis ouvert aux opportunités de stage et aux échanges autour du développement logiciel. Vous pouvez me contacter pour discuter d'un projet ou d'une opportunité.</p>
+          <a class="bouton bouton-principal" href="mailto:maximinferdino@gmail.com">Me contacter</a>
+        </div>
+
+        <ul class="liens">
+          <li>
+            <i class="fa-solid fa-envelope icone" aria-hidden="true"></i>
+            <a id="email" href="mailto:maximinferdino@gmail.com">maximinferdino@gmail.com</a>
+            <button id="copier-email" type="button">copier</button>
+          </li>
+          <li>
+            <i class="fa-brands fa-github icone" aria-hidden="true"></i>
+            <a href="https://github.com/Maximus0352" target="_blank" rel="noopener">github.com/Maximus0352</a>
+          </li>
+          <li>
+            <i class="fa-brands fa-linkedin icone" aria-hidden="true"></i>
+            <a href="https://www.linkedin.com/in/maximin-ferdino-razafinirina-114b58430" target="_blank" rel="noopener">https://www.linkedin.com/in/maximin-ferdino-razafinirina-114b58430</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-file-lines icone" aria-hidden="true"></i>
+            <a href="CV_Maximin.pdf" target="_blank">cv.pdf</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="pied">
+    <div class="conteneur">
+      <span>R.Maximin Ferdino · © <span id="annee"></span></span>
+      <nav>
+        <a href="https://github.com/Maximus0352" target="_blank" rel="noopener"><i class="fa-brands fa-github icone" aria-hidden="true"></i>GitHub</a>
+        <a href="https://www.linkedin.com/in/maximin-ferdino-razafinirina-114b58430" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin icone" aria-hidden="true"></i>LinkedIn</a>
+        <a href="mailto:maximinferdino@gmail.com"><i class="fa-solid fa-envelope icone" aria-hidden="true"></i>E-mail</a>
+        <a href="CV_Maximin.pdf" target="_blank"><i class="fa-solid fa-file-lines icone" aria-hidden="true"></i>CV</a>
+      </nav>
+      <span>Built with care &amp; code.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

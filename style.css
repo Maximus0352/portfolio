@@ -1,0 +1,855 @@
+:root {
+  --fond: #f3f5f8;
+  --carte: #ffffff;
+  --carte-2: #e9edf2;
+  --bordure: #d3dae3;
+  --texte: #151b22;
+  --texte-2: #445060;
+  --texte-3: #667282;
+  --accent: #0c8a50;
+  --accent-fonce: #0a7442;
+  /* Barre de navigation (header) : changez ces 4 couleurs */
+  --fond-header: #151b22;
+  --bordure-header: #2c3745;
+  --texte-header: #ffffff;
+  --texte-header-2: #b4bdc8;
+
+  --police: "IBM Plex Sans", system-ui, sans-serif;
+  --police-code: "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+
+/* ---------- Base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--fond);
+  color: var(--texte);
+  font: 1rem/1.6 var(--police);
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+dl {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.conteneur {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Boutons et petites étiquettes ---------- */
+
+.bouton {
+  display: inline-block;
+  padding: .7rem 1.1rem;
+  font: 500 .85rem var(--police-code);
+  color: var(--texte);
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid var(--bordure);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.bouton:hover {
+  background: var(--carte-2);
+}
+
+.bouton-principal {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.bouton-principal:hover {
+  background: var(--accent-fonce);
+}
+
+.etiquette {
+  display: inline-block;
+  padding: .2rem .55rem;
+  font: .75rem var(--police-code);
+  color: var(--texte-2);
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+}
+
+.statut {
+  display: inline-block;
+  padding: .3rem .55rem;
+  font: 500 .72rem var(--police-code);
+  color: var(--texte-2);
+  border: 1px solid var(--bordure);
+}
+
+.a-completer {
+  max-width: 65ch;
+  padding: .7rem 1rem;
+  color: var(--texte-3);
+  border: 1px dashed var(--bordure);
+}
+
+/* ---------- Barre de navigation ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--fond-header);
+  border-bottom: 1px solid var(--bordure-header);
+}
+
+.nav .conteneur {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+}
+
+.logo {
+  font: 600 .95rem var(--police-code);
+  color: var(--texte-header);
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent);
+  margin-right: .5rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu a {
+  padding: .4rem .75rem;
+  font-size: .9rem;
+  color: var(--texte-header-2);
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.menu a:hover {
+  color: var(--texte-header);
+}
+
+/* Lien de la section affichée à l'écran (ajouté par script.js) */
+.menu a[aria-current] {
+  color: var(--texte-header);
+  border-bottom: 2px solid var(--accent);
+  border-radius: 0;
+}
+
+.nav .bouton {
+  color: var(--texte-header);
+  padding: .5rem .8rem;
+  font-size: .75rem;
+  border-color: var(--bordure-header);
+  border-radius: 3px;
+}
+
+.nav .bouton:hover {
+  background: rgba(255, 255, 255, .1);
+}
+
+.burger {
+  display: none;
+  padding: .4rem .7rem;
+  font: .8rem var(--police-code);
+  color: var(--texte-header);
+  background: transparent;
+  border: 1px solid var(--bordure-header);
+  cursor: pointer;
+}
+
+.burger:hover {
+  background: rgba(255, 255, 255, .1);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: 5rem 0;
+  border-top: 1px solid var(--bordure);
+  scroll-margin-top: 56px;
+}
+
+.section-titre {
+  font: 500 1.05rem var(--police-code);
+  margin-bottom: 1rem;
+}
+
+.section-titre span {
+  color: var(--texte-3);
+  margin-right: .5rem;
+}
+
+.section-intro {
+  font-size: 1.05rem;
+  color: var(--texte-2);
+  margin-bottom: 2.5rem;
+}
+
+.question {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Hero (haut de page) ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+.sur-titre {
+  font: 500 .78rem var(--police-code);
+  letter-spacing: .08em;
+  color: var(--texte-2);
+}
+
+.hero h1 {
+  margin-top: 1.5rem;
+  font-size: clamp(2.3rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.hero-texte {
+  margin-top: 1.5rem;
+  max-width: 56ch;
+  font-size: 1.1rem;
+  color: var(--texte-2);
+}
+
+.hero-boutons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 2rem;
+}
+
+.hero-stack {
+  margin-top: 1.75rem;
+  font: .85rem var(--police-code);
+  color: var(--texte-3);
+}
+
+/* Photo */
+.photo {
+  max-width: 400px;
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+}
+
+.photo-barre {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .5rem .8rem;
+  font: .74rem var(--police-code);
+  color: var(--texte-3);
+  border-bottom: 1px solid var(--bordure);
+}
+
+.photo img,
+.photo-vide {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.photo img {
+  object-fit: cover;
+}
+
+.photo-vide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: 1rem;
+  text-align: center;
+  color: var(--texte-2);
+  background: var(--carte-2);
+}
+
+.photo-vide strong {
+  font: 500 .72rem var(--police-code);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* Petit panneau de code décoratif */
+.code {
+  max-width: 340px;
+  margin: 1rem 0 0 2rem;
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  font: .76rem/1.7 var(--police-code);
+}
+
+.code-titre {
+  padding: .45rem .8rem;
+  color: var(--texte-3);
+  border-bottom: 1px solid var(--bordure);
+}
+
+.code pre {
+  margin: 0;
+  padding: .6rem .8rem;
+  overflow-x: auto;
+  color: var(--texte);
+}
+
+.code .texte {
+  color: var(--accent-fonce);
+}
+
+/* ---------- À propos ---------- */
+
+.apropos {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.apropos-texte {
+  max-width: 60ch;
+  font-size: 1.1rem;
+  color: var(--texte-2);
+}
+
+.infos {
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+}
+
+.infos-titre {
+  padding: .5rem .9rem;
+  font: .74rem var(--police-code);
+  color: var(--texte-3);
+  border-bottom: 1px solid var(--bordure);
+}
+
+.infos dl div {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1rem;
+  padding: .8rem .9rem;
+  border-bottom: 1px dashed var(--bordure);
+}
+
+.infos dl div:last-child {
+  border-bottom: 0;
+}
+
+.infos dt {
+  font: .8rem var(--police-code);
+  color: var(--texte-3);
+}
+
+.infos dd {
+  margin: 0;
+}
+
+/* ---------- Compétences ---------- */
+
+.pile {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.pile-groupe {
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+}
+
+.pile-groupe h3 {
+  padding: .9rem 1rem .1rem;
+  font-size: 1rem;
+}
+
+.pile-groupe .dossier {
+  padding: 0 1rem .8rem;
+  font: .74rem var(--police-code);
+  color: var(--texte-3);
+  border-bottom: 1px solid var(--bordure);
+}
+
+.pile-groupe ul {
+  padding: .8rem 1rem 1rem;
+}
+
+.pile-groupe li {
+  font: .9rem/1.9 var(--police-code);
+}
+
+.pile-groupe li::before {
+  content: "├─ ";
+  color: var(--texte-3);
+}
+
+.pile-groupe li:last-child::before {
+  content: "└─ ";
+}
+
+/* ---------- Projets ---------- */
+
+.projet {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 3rem;
+  padding: 3rem 0;
+  border-top: 1px solid var(--bordure);
+}
+
+.projet:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.projet-entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+
+.numero {
+  font: 500 .8rem var(--police-code);
+  color: var(--texte-3);
+}
+
+.projet h3 {
+  margin-top: 1rem;
+  font-size: 2rem;
+  line-height: 1.15;
+}
+
+.projet-texte {
+  margin-top: 1rem;
+  max-width: 50ch;
+  color: var(--texte-2);
+}
+
+.projet .etiquettes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-top: 1.25rem;
+}
+
+.projet-liens {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
+  margin-top: 1.75rem;
+}
+
+.lien {
+  font: .85rem var(--police-code);
+  color: var(--texte-2);
+}
+
+/* Captures d'écran (placeholders) */
+.capture,
+.capture-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+  object-fit: cover;
+  object-position: top;
+}
+
+.capture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  padding: 1rem;
+  text-align: center;
+  font: .8rem var(--police-code);
+  color: var(--texte-2);
+  border-style: dashed;
+}
+
+.capture strong {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.captures {
+
+  display: grid;
+  gap: .75rem;
+  align-content: start;
+}
+
+.captures-petites {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .75rem;
+}
+
+/* ---------- Parcours ---------- */
+
+.parcours {
+  margin-left: 2.5rem;
+  border-left: 1px solid var(--bordure);
+}
+
+.parcours li {
+  position: relative;
+  padding: 0 0 2rem 2rem;
+}
+
+.parcours li::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: .4rem;
+  width: 11px;
+  height: 11px;
+  background: var(--fond);
+  border: 1px solid var(--texte-3);
+}
+
+.parcours .en-cours::before {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.parcours .reserve::before {
+  border-style: dashed;
+}
+
+.parcours .type {
+  font: .78rem var(--police-code);
+  color: var(--texte-3);
+}
+
+.parcours h3 {
+  margin-top: .2rem;
+  font-size: 1.15rem;
+}
+
+.parcours .date {
+  font: .8rem var(--police-code);
+  color: var(--texte-3);
+}
+
+.parcours p {
+  margin-top: .5rem;
+  max-width: 60ch;
+  color: var(--texte-2);
+}
+
+/* ---------- Contact ---------- */
+
+.contact {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact h2 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -.02em;
+}
+
+.contact p {
+  margin: 1.25rem 0 2rem;
+  max-width: 52ch;
+  font-size: 1.1rem;
+  color: var(--texte-2);
+}
+
+.liens {
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+}
+
+.liens li {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .95rem 1rem;
+  border-bottom: 1px solid var(--bordure);
+  font: .9rem var(--police-code);
+}
+
+.liens li:last-child {
+  border-bottom: 0;
+}
+
+.liens a {
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.liens a:hover {
+  text-decoration: underline;
+}
+
+.liens button {
+  margin-left: auto;
+  padding: 0;
+  font: .8rem var(--police-code);
+  color: var(--texte-2);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.icone {
+  width: 1.25rem;
+  flex: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  text-align: center;
+}
+
+/* ---------- Pied de page ---------- */
+
+.pied {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--bordure);
+  font: .8rem var(--police-code);
+  color: var(--texte-3);
+}
+
+.pied .conteneur {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+
+.pied nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.25rem;
+}
+
+.pied a {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--texte-2);
+  text-decoration: none;
+}
+
+.pied a:hover {
+  text-decoration: underline;
+}
+
+.pied .icone {
+  width: 1rem;
+  font-size: 1rem;
+}
+
+/* ---------- Page détail d'un projet (projet.html) ---------- */
+
+/* Une seule fiche est visible : celle de l'adresse (#tantsaha-connect...).
+   Sans adresse, la première fiche s'affiche. */
+.fiche {
+  display: none;
+  padding: 2.5rem 0 4rem;
+}
+
+.fiche:target {
+  display: block;
+}
+
+main:not(:has(.fiche:target)) .fiche:first-child {
+  display: block;
+}
+
+.fiche>*+* {
+  margin-top: 1rem;
+}
+
+.fiche h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+}
+
+.fiche h2 {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  font-size: 1.3rem;
+  border-top: 1px solid var(--bordure);
+}
+
+.fiche p,
+.fiche li {
+  max-width: 65ch;
+  color: var(--texte-2);
+}
+
+.fiche li::before {
+  content: "+ ";
+  font-family: var(--police-code);
+  color: var(--texte-3);
+}
+
+.fil {
+  font: .8rem var(--police-code);
+  color: var(--texte-3);
+}
+
+.fiche .intro {
+  font-size: 1.1rem;
+}
+
+.schema {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem;
+}
+
+.schema div {
+  min-width: 11rem;
+  padding: .8rem 1rem;
+  background: var(--carte);
+  border: 1px solid var(--bordure);
+}
+
+.schema span {
+  display: block;
+  font: .78rem var(--police-code);
+  color: var(--texte-3);
+}
+
+.fiche .etiquettes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+.fiche .captures-grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: .75rem;
+}
+
+.navigation-projets {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--bordure);
+}
+
+/* ---------- Tablette et mobile ---------- */
+
+@media (max-width: 900px) {
+
+  .hero,
+  .apropos,
+  .contact,
+  .projet {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .code {
+    margin-left: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: .5rem 1.5rem 1rem;
+    background: var(--fond-header);
+    border-bottom: 1px solid var(--bordure-header);
+  }
+
+  .menu.ouvert {
+    display: flex;
+  }
+
+  .menu a {
+    padding: .75rem;
+  }
+
+  .menu .bouton {
+    margin-top: .75rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .captures-petites {
+    grid-template-columns: 1fr;
+  }
+
+  .infos dl div {
+    grid-template-columns: 1fr;
+    gap: .1rem;
+  }
+}
