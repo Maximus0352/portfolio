@@ -1,35 +1,128 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Détail du projet</title>
+  <title>Détail du projet · Maximin Ferdino</title>
+
+  <!-- Applique le thème enregistré avant l'affichage de la page (évite un clignotement) -->
+  <script>
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem("theme"); } catch (e) { }
+      if (theme !== "light" && theme !== "dark") {
+        theme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <header class="nav">
     <div class="conteneur">
-      <a class="logo" href="index.html"><span>&lt;/&gt;</span>RAZAFINIRINA Maximin Ferdino</a>
-      <a class="bouton" href="index.html#projets">← Tous les projets</a>
+      <a class="logo" href="index.html"><span>{mf}</span>Maximin Ferdino</a>
+      <span></span>
+
+      <div class="nav-actions">
+        <a class="bouton" href="index.html#projets">← Tous les projets</a>
+
+        <!-- Bouton mode sombre / mode clair -->
+        <button class="bouton-icone" id="theme" type="button" aria-label="Changer de thème" title="Changer de thème">
+          <i class="fa-solid fa-sun icone-soleil" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon icone-lune" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
   </header>
 
-  
+  <!-- Cette page contient une fiche par projet.
+       Seule la fiche demandée dans l'adresse s'affiche
+       (projet.html#tantsaha-connect, par exemple).
+       Pour ajouter un projet : copiez une <article class="fiche">,
+       changez son id, puis ajoutez un lien vers cet id dans index.html. -->
   <main class="conteneur">
 
-    <!-- ============ FICHE 1 : Tantsaha Connect ============ -->
-    <article class="fiche" id="tantsaha-connect">
-      <p class="fil"><a href="index.html#projets">projets</a> / tantsaha-connect</p>
-      <p><span class="numero">PROJECT_01</span> <span class="statut">En développement</span></p>
-      <h1>Tantsaha Connect</h1>
-      <p class="intro">Application destinée à accompagner les agriculteurs dans le suivi de leurs cultures, avec des informations météorologiques et des conseils agricoles.</p>
+    <!-- ============ FICHE 1 : LawLink Mada ============ -->
+    <article class="fiche" id="lawlink-mada">
+      <p class="fil"><a href="index.html#projets">projets</a> / lawlink-mada</p>
+      <p><span class="numero">PROJET 01</span><span class="statut">Projet académique</span></p>
+      <h1>LawLink Mada</h1>
+      <p class="intro">Plateforme de mise en relation entre clients et avocats, réalisée en 3 mois dans le cadre du
+        projet de Licence 2.</p>
 
       <h2>Problématique</h2>
-      <p>Les agriculteurs ont besoin de suivre leurs cultures et d'accéder aux informations météorologiques et aux conseils agricoles au même endroit.</p>
+      <p>Mettre en relation des clients et des avocats au sein d'une même plateforme.</p>
+      <p class="a-completer">À compléter : précisez le contexte et les utilisateurs visés.</p>
+
+      <h2>Fonctionnalités principales</h2>
+      <ul>
+        <li>API REST sécurisée</li>
+        <li>Gestion des utilisateurs dans une base de données MySQL</li>
+        <li>Interface frontend dynamique</li>
+      </ul>
+      <p class="a-completer">À compléter : détaillez uniquement les fonctionnalités réellement implémentées.</p>
+
+      <h2>Architecture technique</h2>
+      <div class="schema">
+        <div>Interface<span>React</span></div>
+        →
+        <div>API REST sécurisée<span>Node.js · Express</span></div>
+        →
+        <div>Base de données<span>MySQL</span></div>
+      </div>
+      <p class="a-completer">À compléter : décrivez le rôle de chaque couche.</p>
+
+      <h2>Technologies utilisées</h2>
+      <div class="etiquettes">
+        <span class="etiquette">React</span><span class="etiquette">Node.js</span><span
+          class="etiquette">Express</span><span class="etiquette">MySQL</span>
+      </div>
+
+      <h2>Captures d'écran</h2>
+      <div class="captures-grille">
+        <div class="tuile">
+          <div class="fenetre">
+            <div class="fenetre-barre"><i></i><i></i><i></i><span>Aperçu à remplacer</span></div>
+            <div class="fenetre-corps"><strong>Screenshot placeholder</strong>Capture de la version web</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Difficultés rencontrées et solutions</h2>
+      <p class="a-completer">À compléter : décrivez une difficulté rencontrée et la solution apportée.</p>
+
+      <h2>Dépôt GitHub</h2>
+      <p>Aucun dépôt renseigné. <!-- Ajoutez : <a href="https://github.com/...">lien</a> --></p>
+
+      <div class="navigation-projets">
+        <a href="index.html#projets">← Tous les projets</a>
+        <a href="#tantsaha-connect">Tantsaha Connect →</a>
+      </div>
+    </article>
+
+    <!-- ============ FICHE 2 : Tantsaha Connect ============ -->
+    <article class="fiche" id="tantsaha-connect">
+      <p class="fil"><a href="index.html#projets">projets</a> / tantsaha-connect</p>
+      <p><span class="numero">PROJET 02</span><span class="statut">En développement</span></p>
+      <h1>Tantsaha Connect</h1>
+      <p class="intro">Application destinée à accompagner les agriculteurs dans le suivi de leurs cultures, avec des
+        informations météorologiques et des conseils agricoles.</p>
+
+      <h2>Problématique</h2>
+      <p>Les agriculteurs ont besoin de suivre leurs cultures et d'accéder aux informations météorologiques et aux
+        conseils agricoles au même endroit.</p>
       <p class="a-completer">À compléter : précisez le contexte et les utilisateurs visés.</p>
 
       <h2>Fonctionnalités principales</h2>
@@ -52,32 +145,82 @@
 
       <h2>Technologies utilisées</h2>
       <div class="etiquettes">
-        <span class="etiquette">React Native</span><span class="etiquette">Expo</span><span class="etiquette">Node.js</span><span class="etiquette">MySQL</span>
+        <span class="etiquette">React Native</span><span class="etiquette">Expo</span><span
+          class="etiquette">Node.js</span><span class="etiquette">MySQL</span>
       </div>
 
       <h2>Captures d'écran</h2>
       <div class="captures-grille">
-        <div class="capture"><strong>Screenshot placeholder</strong>Capture de la version web</div>
+        <div class="tuile">
+          <div class="fenetre">
+            <div class="fenetre-barre"><i></i><i></i><i></i><span>Aperçu à remplacer</span></div>
+            <div class="fenetre-corps"><strong>Screenshot placeholder</strong>Capture de la version web</div>
+          </div>
+        </div>
       </div>
 
       <h2>Difficultés rencontrées et solutions</h2>
       <p class="a-completer">À compléter : décrivez une difficulté rencontrée et la solution apportée.</p>
 
       <h2>Dépôt GitHub</h2>
-      <p>Aucun dépôt renseigné. <!-- Ajoutez : <a class="lien" href="https://github.com/...">lien</a> --></p>
+      <p>Aucun dépôt renseigné.</p>
 
       <div class="navigation-projets">
-        <a class="lien" href="index.html#projets">← Tous les projets</a>
-        <a class="lien" href="#gestion-tournois">Gestion de tournois sportifs →</a>
+        <a href="#lawlink-mada">← LawLink Mada</a>
+        <a href="#parkin">ParkIn →</a>
       </div>
     </article>
 
-    <!-- ============ FICHE 2 : Gestion de tournois sportifs ============ -->
+    <!-- ============ FICHE 3 : ParkIn ============ -->
+    <article class="fiche" id="parkin">
+      <p class="fil"><a href="index.html#projets">projets</a> / parkin</p>
+      <p><span class="numero">PROJET 03</span><span class="statut">Statut à renseigner</span></p>
+      <h1>ParkIn</h1>
+      <p class="intro a-completer">À compléter : en une ou deux phrases, ce que fait ParkIn.</p>
+
+      <h2>Problématique</h2>
+      <p class="a-completer">À compléter : le besoin auquel répond le projet.</p>
+
+      <h2>Fonctionnalités principales</h2>
+      <p class="a-completer">À compléter : ne listez que les fonctionnalités réellement implémentées.</p>
+
+      <h2>Architecture technique</h2>
+      <p class="a-completer">À compléter : décrivez les couches du projet (interface, serveur, base de données…).</p>
+
+      <h2>Technologies utilisées</h2>
+      <div class="etiquettes">
+        <span class="etiquette">Technologies à renseigner</span>
+      </div>
+
+      <h2>Captures d'écran</h2>
+      <div class="captures-grille">
+        <div class="tuile">
+          <div class="fenetre">
+            <div class="fenetre-barre"><i></i><i></i><i></i><span>Aperçu à remplacer</span></div>
+            <div class="fenetre-corps"><strong>Screenshot placeholder</strong>Capture de la version web</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Difficultés rencontrées et solutions</h2>
+      <p class="a-completer">À compléter : décrivez une difficulté rencontrée et la solution apportée.</p>
+
+      <h2>Dépôt GitHub</h2>
+      <p>Aucun dépôt renseigné.</p>
+
+      <div class="navigation-projets">
+        <a href="#tantsaha-connect">← Tantsaha Connect</a>
+        <a href="#gestion-tournois">Gestion de tournois sportifs →</a>
+      </div>
+    </article>
+
+    <!-- ============ FICHE 4 : Gestion de tournois sportifs ============ -->
     <article class="fiche" id="gestion-tournois">
       <p class="fil"><a href="index.html#projets">projets</a> / gestion-tournois</p>
-      <p><span class="numero">PROJECT_02</span> <span class="statut">En développement</span></p>
+      <p><span class="numero">PROJET 04</span><span class="statut">En développement</span></p>
       <h1>Gestion de tournois sportifs</h1>
-      <p class="intro">Application de gestion de tournois sportifs développée dans le cadre d'un projet personnel en Java et Spring Boot.</p>
+      <p class="intro">Application de gestion de tournois sportifs développée dans le cadre d'un projet personnel en
+        Java et Spring Boot.</p>
 
       <h2>Problématique</h2>
       <p>Organiser les équipes, les tournois et les matchs au sein d'une même application.</p>
@@ -102,15 +245,36 @@
 
       <h2>Technologies utilisées</h2>
       <div class="etiquettes">
-        <span class="etiquette">Java</span><span class="etiquette">Spring Boot</span><span class="etiquette">Maven</span><span class="etiquette">MySQL</span>
+        <span class="etiquette">Java</span><span class="etiquette">Spring Boot</span><span
+          class="etiquette">Maven</span><span class="etiquette">MySQL</span>
       </div>
 
       <h2>Captures d'écran</h2>
       <div class="captures-grille">
-        <div class="capture"><strong>Screenshot placeholder</strong>Tableau de bord</div>
-        <div class="capture"><strong>Screenshot placeholder</strong>Équipes</div>
-        <div class="capture"><strong>Screenshot placeholder</strong>Tournois</div>
-        <div class="capture"><strong>Screenshot placeholder</strong>Matchs</div>
+        <div class="tuile">
+          <div class="fenetre">
+            <div class="fenetre-barre"><i></i><i></i><i></i><span>Aperçu à remplacer</span></div>
+            <div class="fenetre-corps"><strong>Screenshot placeholder</strong>Tableau de bord</div>
+          </div>
+        </div>
+        <div class="tuile">
+          <div class="fenetre">
+            <div class="fenetre-barre"><i></i><i></i><i></i><span>Aperçu à remplacer</span></div>
+            <div class="fenetre-corps"><strong>Screenshot placeholder</strong>Équipes</div>
+          </div>
+        </div>
+        <div class="tuile">
+          <div class="fenetre">
+            <div class="fenetre-barre"><i></i><i></i><i></i><span>Aperçu à remplacer</span></div>
+            <div class="fenetre-corps"><strong>Screenshot placeholder</strong>Tournois</div>
+          </div>
+        </div>
+        <div class="tuile">
+          <div class="fenetre">
+            <div class="fenetre-barre"><i></i><i></i><i></i><span>Aperçu à remplacer</span></div>
+            <div class="fenetre-corps"><strong>Screenshot placeholder</strong>Matchs</div>
+          </div>
+        </div>
       </div>
 
       <h2>Difficultés rencontrées et solutions</h2>
@@ -120,57 +284,8 @@
       <p>Aucun dépôt renseigné.</p>
 
       <div class="navigation-projets">
-        <a class="lien" href="#tantsaha-connect">← Tantsaha Connect</a>
-        <a class="lien" href="#pipeline-ecommerce">Pipeline de données e-commerce →</a>
-      </div>
-    </article>
-
-    <!-- ============ FICHE 3 : Pipeline de données e-commerce ============ -->
-    <article class="fiche" id="pipeline-ecommerce">
-      <p class="fil"><a href="index.html#projets">projets</a> / pipeline-ecommerce</p>
-      <p><span class="numero">PROJECT_03</span> <span class="statut">Projet académique</span></p>
-      <h1>Pipeline de données e-commerce</h1>
-      <p class="intro">Projet de traitement de données utilisant une architecture en couches Bronze, Silver et Gold.</p>
-
-      <h2>Problématique</h2>
-      <p>Traiter des données e-commerce de façon structurée, en les faisant passer par des couches successives.</p>
-      <p class="a-completer">À compléter : précisez le contexte et les données utilisées.</p>
-
-      <h2>Fonctionnalités principales</h2>
-      <ul>
-        <li>Traitement des données en couches Bronze, Silver et Gold</li>
-      </ul>
-      <p class="a-completer">À compléter : ne listez que les fonctionnalités réellement implémentées.</p>
-
-      <h2>Architecture technique</h2>
-      <div class="schema">
-        <div>Bronze<span>Données brutes</span></div>
-        →
-        <div>Silver<span>Données transformées</span></div>
-        →
-        <div>Gold<span>Données exploitables</span></div>
-      </div>
-      <p class="a-completer">À compléter : décrivez les traitements de chaque couche.</p>
-
-      <h2>Technologies utilisées</h2>
-      <div class="etiquettes">
-        <span class="etiquette">Python</span><span class="etiquette">PostgreSQL</span><span class="etiquette">SQL</span><span class="etiquette">Docker</span>
-      </div>
-
-      <h2>Captures d'écran</h2>
-      <div class="captures-grille">
-        <div class="capture"><strong>Screenshot placeholder</strong>Résultats SQL ou exécution du pipeline</div>
-      </div>
-
-      <h2>Difficultés rencontrées et solutions</h2>
-      <p class="a-completer">À compléter : décrivez une difficulté rencontrée et la solution apportée.</p>
-
-      <h2>Dépôt GitHub</h2>
-      <p>Aucun dépôt renseigné.</p>
-
-      <div class="navigation-projets">
-        <a class="lien" href="#gestion-tournois">← Gestion de tournois sportifs</a>
-        <a class="lien" href="index.html#projets">Tous les projets →</a>
+        <a href="#parkin">← ParkIn</a>
+        <a href="index.html#projets">Tous les projets →</a>
       </div>
     </article>
 
@@ -178,11 +293,15 @@
 
   <footer class="pied">
     <div class="conteneur">
-      <span>Votre Nom · © <span id="annee"></span></span>
-      <span>Built with care &amp; code.</span>
+      <div>
+        <strong>RAZAFINIRINA Maximin Ferdino</strong>
+        <span class="mono">© <span id="annee"></span> · Portfolio personnel</span>
+      </div>
+      <span class="mono">Built with care &amp; code.</span>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>

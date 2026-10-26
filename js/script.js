@@ -1,23 +1,49 @@
+// =====================================================
+// SCRIPT DU PORTFOLIO
+// Tout le contenu (textes, projets, liens) se modifie
+// directement dans les fichiers HTML. Ce script gère
+// seulement quelques petits comportements.
+// =====================================================
+
 // 1. Année du pied de page
 const annee = document.getElementById("annee");
 if (annee) annee.textContent = new Date().getFullYear();
 
-// 2. Menu sur mobile : le bouton ouvre et ferme le menu
+// 2. Mode sombre / mode clair
+// Le thème de départ est choisi dans le <head> de chaque page.
+// Ici, le bouton change le thème et le mémorise dans le navigateur.
+const boutonTheme = document.getElementById("theme");
+
+if (boutonTheme) {
+  boutonTheme.addEventListener("click", () => {
+    const html = document.documentElement;
+    const nouveau = html.getAttribute("data-theme") === "light" ? "dark" : "light";
+
+    html.setAttribute("data-theme", nouveau);
+    try { localStorage.setItem("theme", nouveau); } catch (e) {}
+  });
+}
+
+// 3. Menu sur mobile : le bouton ouvre et ferme le menu
 const burger = document.getElementById("burger");
 const menu = document.getElementById("menu");
 
 if (burger && menu) {
   burger.addEventListener("click", () => {
-    menu.classList.toggle("ouvert");
+    const ouvert = menu.classList.toggle("ouvert");
+    burger.setAttribute("aria-expanded", String(ouvert));
   });
 
   // Le menu se ferme quand on clique sur un lien
   menu.addEventListener("click", (event) => {
-    if (event.target.tagName === "A") menu.classList.remove("ouvert");
+    if (event.target.closest("a")) {
+      menu.classList.remove("ouvert");
+      burger.setAttribute("aria-expanded", "false");
+    }
   });
 }
 
-// 3. Navigation active : le lien de la section affichée est mis en évidence
+// 4. Navigation active : le lien de la section affichée est mis en évidence
 const liensMenu = document.querySelectorAll('.menu a[href^="#"]');
 const sections = [];
 
@@ -30,7 +56,7 @@ function marquerLienActif() {
   // La section active est la dernière dont le haut a dépassé le haut de l'écran
   let active = sections[0];
   sections.forEach((section) => {
-    if (section.getBoundingClientRect().top <= 120) active = section;
+    if (section.getBoundingClientRect().top <= 140) active = section;
   });
 
   // En bas de page, la dernière section (Contact) est active
@@ -51,7 +77,7 @@ if (sections.length > 0) {
   marquerLienActif();
 }
 
-// 4. Bouton « copier » de l'adresse e-mail
+// 5. Bouton « copier » de l'adresse e-mail
 const boutonCopier = document.getElementById("copier-email");
 const email = document.getElementById("email");
 
